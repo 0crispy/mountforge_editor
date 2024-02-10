@@ -315,6 +315,12 @@ pub fn update_egui(
             .anchor(Align2::CENTER_CENTER, bevy_egui::egui::Vec2::ZERO)
             .collapsible(false)
             .show(contexts.ctx_mut(), |ui| {
+                ui.heading("Controls:");
+                ui.label("Pan the camera using the middle mouse button.");
+                ui.label("Orbit the camera using the right mouse button.");
+                ui.label("Interact with the left mouse button.");
+                ui.label("Lower the terrain by holding the control key and pressing the left mouse button.");
+                ui.separator();
                 ui.heading("Load:");
                 if ui.button("Load from file").clicked() {
                     let path = std::env::current_dir().unwrap();
